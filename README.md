@@ -1,4 +1,4 @@
-# adw-oac
+# adb-ML
 
 This architecture uses Oracle Autonomous Data Warehouse to load and optimize data from multiple flat-file sources into a centralized data warehouse and then uses Oracle Analytics Cloud to analyze the data to provide actionable insights.
 
@@ -66,7 +66,7 @@ When you no longer need the deployment, you can run this command to destroy it:
 
 ## adb-ml-architecture
 
-![](./images/adb-ml.png)
+![](./images/adb-ml.PNG)
 
 
 ## Reference Archirecture
