@@ -15,8 +15,8 @@ and [setup guide](https://www.terraform.io/docs/providers/oci/guides/version-3-u
 ## Clone the Module
 Now, you'll want a local copy of this repo. You can make that with the commands:
 
-    git clone https://github.com/oracle-quickstart/oci-arch-adw-oac
-    cd oci-arch-adw-oac-no-odi
+    git clone https://github.com/oracle-quickstart/oci-arch-data-science
+    cd adb-ml
     ls
 
 ## Prerequisites
