@@ -22,12 +22,3 @@ resource "oci_analytics_analytics_instance" "test_analytics_instance" {
 
 
 }
-resource "oci_datacatalog_catalog" "test_catalog" {
-    #Required
-    compartment_id = "${var.compartment_ocid}"
-
-    #Optional
-#defined_tags = {"foo-namespace.bar-key"= "value"}
-display_name = "test_catalog_instance"
-#freeform_tags = {"bar-key"= "value"}
-}

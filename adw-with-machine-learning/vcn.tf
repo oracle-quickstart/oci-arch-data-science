@@ -169,6 +169,15 @@ resource "oci_core_subnet" "subnet_1" {
 #  }
 #}
 
+resource "oci_core_drg" "test_drg" {
+    #Required
+    compartment_id = "${var.compartment_ocid}"
+
+    #Optional
+#defined_tags = {"Operations.CostCenter"= "42"}
+#display_name = "${var.drg_display_name}"
+#freeform_tags = {"Department"= "Finance"}
+}
 
 
 
