@@ -72,4 +72,5 @@ When you no longer need the deployment, you can run this command to destroy it:
 ## Reference Archirecture
 
 - [Setup a adb-ml network topology](https://docs.oracle.com/en/solutions/data-science-environment/index.html)
+- [Autonmous Database comes pre instaleld with Apex.](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/application-express-autonomous-database.html)
 
