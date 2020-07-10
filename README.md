@@ -71,7 +71,6 @@ When you no longer need the deployment, you can run this command to destroy it:
 
 ## Reference Archirecture
 
-- [Set up a data science environment that uses Oracle Machine Learning and Creating Applications with Oracle Application Express in      
-   Autonomous Database](https://docs.oracle.com/en/solutions/data-science-environment/index.html)
+- [Set up a data science environment that uses Oracle Machine Learning and Creating Applications with Oracle Application Express in      Autonomous Database](https://docs.oracle.com/en/solutions/data-science-environment/index.html)
 - [Autonmous Database comes pre instaleld with APEX.](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/application-express-autonomous-database.html)
 
