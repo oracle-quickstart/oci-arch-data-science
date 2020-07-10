@@ -69,7 +69,7 @@ When you no longer need the deployment, you can run this command to destroy it:
 ![](./images/adb-ml.PNG)
 
 
-## Reference Archirecture
+## Reference Architecture
 
 - [Set up a data science environment that uses Oracle Machine Learning](https://docs.oracle.com/en/solutions/data-science-environment/index.html)
 - [Creating Applications with APEX in Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/application-express-autonomous-database.html)
