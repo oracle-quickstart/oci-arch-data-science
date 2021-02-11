@@ -26,6 +26,8 @@ resource "oci_core_instance" "compute_instance1" {
     ssh_authorized_keys = tls_private_key.public_private_key_pair.public_key_openssh
   }
 
+  defined_tags = {"${oci_identity_tag_namespace.ArchitectureCenterTagNamespace.name}.${oci_identity_tag.ArchitectureCenterTag.name}" = var.release }
+
   timeouts {
     create = "60m"
   }

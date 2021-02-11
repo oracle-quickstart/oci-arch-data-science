@@ -12,4 +12,5 @@ resource "oci_database_autonomous_database" "test_autonomous_database" {
     display_name             = var.autonomous_database_display_name
     is_auto_scaling_enabled  = var.autonomous_database_is_auto_scaling_enabled
     license_model            = var.autonomous_database_license_model
+    defined_tags             = {"${oci_identity_tag_namespace.ArchitectureCenterTagNamespace.name}.${oci_identity_tag.ArchitectureCenterTag.name}" = var.release } 
 }

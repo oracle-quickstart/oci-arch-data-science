@@ -8,6 +8,7 @@ resource "oci_core_virtual_network" "vcn" {
   compartment_id = var.compartment_ocid
   display_name   = "app-db-vcn2"
   dns_label      = "tfexamplevcn2"
+  defined_tags   = {"${oci_identity_tag_namespace.ArchitectureCenterTagNamespace.name}.${oci_identity_tag.ArchitectureCenterTag.name}" = var.release }
 }
 
 data "oci_core_services" "test_services" {
@@ -22,6 +23,7 @@ resource "oci_core_internet_gateway" "ExampleIG" {
   compartment_id = var.compartment_ocid
   display_name   = "TFExampleIG"
   vcn_id         = oci_core_virtual_network.vcn.id
+  defined_tags   = {"${oci_identity_tag_namespace.ArchitectureCenterTagNamespace.name}.${oci_identity_tag.ArchitectureCenterTag.name}" = var.release }
 }
 
 # Create route table to associate with app server subnet
@@ -34,6 +36,7 @@ resource "oci_core_route_table" "apprt" {
     cidr_block        = "0.0.0.0/0"
     network_entity_id = oci_core_internet_gateway.ExampleIG.id
   }
+  defined_tags = {"${oci_identity_tag_namespace.ArchitectureCenterTagNamespace.name}.${oci_identity_tag.ArchitectureCenterTag.name}" = var.release }
 }
 
 # Create regional subnets in vcn
@@ -47,6 +50,7 @@ resource "oci_core_subnet" "subnet_1" {
   route_table_id    = oci_core_route_table.apprt.id
   prohibit_public_ip_on_vnic = false
   dns_label         = "subnet1"
+  defined_tags      = {"${oci_identity_tag_namespace.ArchitectureCenterTagNamespace.name}.${oci_identity_tag.ArchitectureCenterTag.name}" = var.release }
 
   provisioner "local-exec" {
     command = "sleep 5"
@@ -55,6 +59,7 @@ resource "oci_core_subnet" "subnet_1" {
 
 resource "oci_core_drg" "test_drg" {
     compartment_id = var.compartment_ocid
+    defined_tags = {"${oci_identity_tag_namespace.ArchitectureCenterTagNamespace.name}.${oci_identity_tag.ArchitectureCenterTag.name}" = var.release }
 }
 
 resource "oci_core_drg_attachment" "test_drg_attachment" {

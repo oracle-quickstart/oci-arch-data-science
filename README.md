@@ -14,7 +14,7 @@ If you don't have the required permissions and quota, contact your tenancy admin
 
 ## Deploy Using Oracle Resource Manager
 
-1. Click [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://console.us-phoenix-1.oraclecloud.com/resourcemanager/stacks/create?region=home&zipUrl=https://github.com/oracle-quickstart/oci-arch-data-science/raw/master/resource-manager/oci-arch-data-science.zip)
+1. Click [![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?region=home&zipUrl=https://github.com/oracle-quickstart/oci-arch-data-science/releases/latest/download/oci-arch-data-science-stack-latest.zip)
 
     If you aren't already signed in, when prompted, enter the tenancy and user credentials.
 
@@ -63,7 +63,7 @@ region = "<oci_region>"
 compartment_ocid = "<compartment_ocid>"
 
 # Autonomous Data Warehouse
-autonomous_database_admin_password="enter-password-here"
+autonomous_database_admin_password = "<enter-password-here>"
 
 # Oracle Analytics Cloud
 analytics_instance_capacity_capacity_type = "<enter_capacity_type_here>"
