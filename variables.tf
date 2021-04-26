@@ -106,10 +106,6 @@ variable "subnet_cidr" {
   default = "10.0.0.0/24"
 }
 
-variable "instance_shape" {
-default = "VM.Standard2.4"
-}
-
 variable "catalog_display_name" {
   default = "test_catalog_instance"
 }
