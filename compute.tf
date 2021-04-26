@@ -10,6 +10,15 @@ resource "oci_core_instance" "compute_instance1" {
   compartment_id      = var.compartment_ocid
   display_name        = "App-Server-${(count.index%3)+1}"
   shape               = var.instance_shape
+
+  dynamic "shape_config" {
+    for_each = local.is_flexible_node_shape ? [1] : []
+    content {
+      memory_in_gbs = var.instance_shape_flex_memory
+      ocpus = var.instance_shape_flex_ocpus
+    }
+  }
+  
   fault_domain        = "FAULT-DOMAIN-${(count.index%3)+1}"
 
   source_details {
@@ -23,7 +32,8 @@ resource "oci_core_instance" "compute_instance1" {
   }
 
   metadata = {
-    ssh_authorized_keys = tls_private_key.public_private_key_pair.public_key_openssh
+    ssh_authorized_keys = var.ssh_public_key
+    user_data = data.template_cloudinit_config.cloud_init.rendered
   }
 
   defined_tags = {"${oci_identity_tag_namespace.ArchitectureCenterTagNamespace.name}.${oci_identity_tag.ArchitectureCenterTag.name}" = var.release }

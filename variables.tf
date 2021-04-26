@@ -4,15 +4,19 @@
 # Variables
 variable "tenancy_ocid" {}
 variable "compartment_ocid" {}
-variable "user_ocid" {}
-variable "fingerprint" {}
-variable "private_key_path" {}
+#variable "user_ocid" {}
+#variable "fingerprint" {}
+#variable "private_key_path" {}
 variable "region" {}
 variable "availablity_domain_name" {}
 
+variable "ssh_public_key" {
+  default = ""
+}
+
 variable "release" {
   description = "Reference Architecture Release (OCI Architecture Center)"
-  default     = "1.0"
+  default     = "1.1"
 }
 
 # OS Images
@@ -23,7 +27,7 @@ variable "instance_os" {
 
 variable "linux_os_version" {
   description = "Operating system version for all Linux instances"
-  default     = "7.8"
+  default     = "7.9"
 }
 
 variable "autonomous_database_cpu_core_count" {
@@ -91,3 +95,17 @@ default = "VM.Standard2.4"
 variable "catalog_display_name" {
   default = "test_catalog_instance"
 }
+
+# Dictionary Locals
+locals {
+  compute_flexible_shapes = [
+    "VM.Standard.E3.Flex",
+    "VM.Standard.E4.Flex"
+  ]
+}
+
+# Checks if is using Flexible Compute Shapes
+locals {
+  is_flexible_node_shape = contains(local.compute_flexible_shapes, var.instance_shape)
+}
+
