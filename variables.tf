@@ -27,7 +27,19 @@ variable "instance_os" {
 
 variable "linux_os_version" {
   description = "Operating system version for all Linux instances"
-  default     = "7.9"
+  default     = "8"
+}
+
+variable "instance_shape" {
+  default     = "VM.Standard.E3.Flex"
+}
+
+variable "instance_shape_flex_ocpus" {
+    default = 1
+}
+
+variable "instance_shape_flex_memory" {
+    default = 10
 }
 
 variable "autonomous_database_cpu_core_count" {
@@ -86,7 +98,13 @@ variable "analytics_instance_name" {
 
 variable "analytics_instance_idcs_access_token" {}
 
-variable "vcn_cidr" { default = "10.0.0.0/16" }
+variable "vcn_cidr" { 
+  default = "10.0.0.0/16" 
+}
+
+variable "subnet_cidr" { 
+  default = "10.0.0.0/24"
+}
 
 variable "instance_shape" {
 default = "VM.Standard2.4"

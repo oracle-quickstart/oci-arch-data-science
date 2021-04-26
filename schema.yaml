@@ -30,6 +30,7 @@ variableGroups:
         - show_advanced
   variables:  
   - vcn_cidr
+  - subnet_cidr
 
 - title: Compute Optional Configuration
   visible: 
@@ -132,7 +133,16 @@ variables:
     required: false
     default: "10.0.0.0/16"
     pattern: "^(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9]).(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9]).(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9]).(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\\/(3[0-2]|[1-2]?[0-9])$"
+    title: "VCN CIDR"
     description: "VCN CIDR block where you want to create the solution resources."
+
+  subnet_cidr:  
+    type: string
+    required: false
+    default: "10.0.0.0/24"
+    pattern: "^(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9]).(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9]).(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9]).(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\\/(3[0-2]|[1-2]?[0-9])$"
+    title: "Subnet CIDR"
+    description: "Subnet CIDR block where you want to create the solution resources."
 
   ssh_public_key:
     type: oci:core:ssh:publickey

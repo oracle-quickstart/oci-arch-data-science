@@ -4,7 +4,7 @@
 # Create VCN
 
 resource "oci_core_virtual_network" "vcn" {
-  cidr_block     = "10.0.0.0/16"
+  cidr_block     = var.vcn_cidr
   compartment_id = var.compartment_ocid
   display_name   = "app-db-vcn2"
   dns_label      = "tfexamplevcn2"
